@@ -1,0 +1,54 @@
+
+language: cpp
+dist: bionic
+
+addons:
+  apt:
+    packages:
+      #for sfml:
+      - libxrandr-dev
+      - libudev-dev
+      - libopenal-dev
+      - libflac-dev
+      - libvorbis-dev
+
+  homebrew:
+    packages:
+      - sfml
+    update: true
+
+notifications:
+  on_failure: never
+  on_success: never
+
+os:
+  - linux
+  - osx
+
+compiler:
+  - gcc
+  - clang
+
+matrix:
+  exclude:
+    - os: osx
+      compiler: gcc
+
+  allow_failures:
+    - os: osx
+
+before_script:
+  - if [ $TRAVIS_OS_NAME == 'linux' ]; then
+      wget http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip;
+      unzip -q SFML-2.5.1-sources.zip;
+      pushd SFML-2.5.1 && mkdir build && cd build && cmake .. && make;
+      make DESTDIR=$TRAVIS_BUILD_DIR install;
+      popd;
+    fi
+
+  #
+  - mkdir build && cd build
+  - cmake -DSFML_DIR=$TRAVIS_BUILD_DIR/usr/local/lib/cmake/SFML ..
+
+script:
+  - make
