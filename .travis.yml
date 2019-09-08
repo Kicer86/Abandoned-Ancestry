@@ -43,10 +43,7 @@ cache:
 
 
 before_script:
-  - echo $TRAVIS_BUILD_DIR
-  - ls $TRAVIS_BUILD_DIR
-  - ls $TRAVIS_BUILD_DIR/usr
-  - if [ $TRAVIS_OS_NAME == 'linux' -a ! -d $TRAVIS_BUILD_DIR/usr ]; then
+  - if [ $TRAVIS_OS_NAME == 'linux' -a ! -d $TRAVIS_BUILD_DIR/usr/local ]; then
       wget http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip;
       unzip -q SFML-2.5.1-sources.zip;
       pushd SFML-2.5.1 && mkdir build && cd build && cmake -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache .. && make;
