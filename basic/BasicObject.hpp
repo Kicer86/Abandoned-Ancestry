@@ -1,18 +1,19 @@
-#ifndef GAMEOBJECT_HPP
-#define GAMEOBJECT_HPP
+#ifndef BASICOBJECT_HPP
+#define BASICOBJECT_HPP
 
-#include "IDrawable.hpp"
 #include "IObject.hpp"
 
-class GameObject : public IObject, public IDrawable {
+class BasicObject : public IObject 
+{
 public:
+    BasicObject(float x, float y, float width, float height);
+
     virtual const sf::Vector2f& getPosition();
     virtual const sf::Vector2f& getSize();
     virtual void move(const sf::Vector2f& moveVector);
-    virtual void draw(sf::RenderTarget *drawer);
 private:
     sf::Vector2f _position;
     sf::Vector2f _size;
 };
 
-#endif // GAMEOBJECT_HPP
+#endif //BASICOBJECT_HPP

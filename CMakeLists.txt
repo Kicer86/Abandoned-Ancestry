@@ -12,7 +12,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/modules)
 find_package(SFML REQUIRED COMPONENTS window)
 
 add_executable(Abandoned-Ancestry main.cpp
-                                  basic/GameObject.cpp)
+                                  basic/BasicDrawable.cpp
+                                  basic/BasicObject.cpp)
 
 target_link_libraries(Abandoned-Ancestry
                         PRIVATE
