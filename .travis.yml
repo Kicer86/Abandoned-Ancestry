@@ -16,7 +16,6 @@ addons:
   homebrew:
     packages:
       - sfml
-    update: true
 
 notifications:
   on_failure: never
