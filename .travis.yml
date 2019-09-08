@@ -35,7 +35,7 @@ matrix:
     - os: osx
       compiler: gcc
 
-ache:
+cache:
     - ccache: true
     -  directories:
         - $TRAVIS_BUILD_DIR/usr
