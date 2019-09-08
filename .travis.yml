@@ -16,6 +16,7 @@ addons:
   homebrew:
     packages:
       - sfml
+      - ccache
     update: true
 
 notifications:
