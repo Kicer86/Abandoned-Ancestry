@@ -38,8 +38,15 @@ matrix:
   allow_failures:
     - os: osx
 
+
+ache:
+    - ccache: true
+    -  directories:
+        - $TRAVIS_BUILD_DIR/usr
+
+
 before_script:
-  - if [ $TRAVIS_OS_NAME == 'linux' ]; then
+  - if [ $TRAVIS_OS_NAME == 'linux' -a ! -d $TRAVIS_BUILD_DIR/usr]; then
       wget http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip;
       unzip -q SFML-2.5.1-sources.zip;
       pushd SFML-2.5.1 && mkdir build && cd build && cmake .. && make;
