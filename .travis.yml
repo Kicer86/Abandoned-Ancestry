@@ -34,10 +34,6 @@ matrix:
     - os: osx
       compiler: gcc
 
-  allow_failures:
-    - os: osx
-
-
 ache:
     - ccache: true
     -  directories:
