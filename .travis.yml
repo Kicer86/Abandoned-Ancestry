@@ -45,14 +45,14 @@ before_script:
   - if [ $TRAVIS_OS_NAME == 'linux' -a ! -d $TRAVIS_BUILD_DIR/usr ]; then
       wget http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip;
       unzip -q SFML-2.5.1-sources.zip;
-      pushd SFML-2.5.1 && mkdir build && cd build && cmake .. && make;
+      pushd SFML-2.5.1 && mkdir build && cd build && cmake -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache .. && make;
       make DESTDIR=$TRAVIS_BUILD_DIR install;
       popd;
     fi
 
   #
   - mkdir build && cd build
-  - cmake -DSFML_DIR=$TRAVIS_BUILD_DIR/usr/local/lib/cmake/SFML ..
+  - cmake -DSFML_DIR=$TRAVIS_BUILD_DIR/usr/local/lib/cmake/SFML -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache ..
 
 script:
   - make
