@@ -43,6 +43,7 @@ cache:
 
 
 before_script:
+  # there is no SFML 2.5 for ubuntu bionic. Download and build one
   - if [ $TRAVIS_OS_NAME == 'linux' -a ! -d $TRAVIS_BUILD_DIR/usr/local ]; then
       wget http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip;
       unzip -q SFML-2.5.1-sources.zip;
