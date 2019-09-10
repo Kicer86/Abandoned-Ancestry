@@ -1,0 +1,60 @@
+
+language: cpp
+dist: bionic
+
+addons:
+  apt:
+    packages:
+      #for sfml:
+      - libxrandr-dev
+      - libudev-dev
+      - libopenal-dev
+      - libflac-dev
+      - libvorbis-dev
+      - libglew-dev
+
+  homebrew:
+    packages:
+      - sfml
+      - ccache
+    update: true
+
+notifications:
+  on_failure: never
+  on_success: never
+
+os:
+  - linux
+  - osx
+
+compiler:
+  - gcc
+  - clang
+
+matrix:
+  exclude:
+    - os: osx
+      compiler: gcc
+
+cache:
+    - ccache: true
+    -  directories:
+        - $TRAVIS_BUILD_DIR/usr
+
+
+before_script:
+  # there is no SFML 2.5 for ubuntu bionic. Download and build one
+  - if [ $TRAVIS_OS_NAME == 'linux' -a ! -d $TRAVIS_BUILD_DIR/usr/local ]; then
+      wget http://www.sfml-dev.org/files/SFML-2.5.1-sources.zip;
+      unzip -q SFML-2.5.1-sources.zip;
+      pushd SFML-2.5.1 && mkdir build && cd build && cmake -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache .. && make;
+      make DESTDIR=$TRAVIS_BUILD_DIR install;
+      popd;
+    fi
+
+  #
+  - mkdir build && cd build
+  - cmake -DSFML_DIR=$TRAVIS_BUILD_DIR/usr/local/lib/cmake/SFML -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_C_COMPILER_LAUNCHER=ccache ..
+
+script:
+  - make
