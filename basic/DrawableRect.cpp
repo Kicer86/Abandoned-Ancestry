@@ -1,9 +1,9 @@
 
-#include "BasicDrawable.hpp"
+#include "DrawableRect.hpp"
 
 
-BasicDrawable::BasicDrawable():
-    _rect({100, 40})
+DrawableRect::DrawableRect(int width, int height):
+    _rect({width, height})
 {
     _rect.setFillColor(sf::Color(0, 0, 0, 0));
     _rect.setOutlineThickness(1.0f);
@@ -11,7 +11,7 @@ BasicDrawable::BasicDrawable():
 }
 
 
-void BasicDrawable::draw(IObject *model, sf::RenderTarget *drawer)
+void DrawableRect::draw(IObject *model, sf::RenderTarget *drawer)
 {
     sf::Transform t;
     t.translate(model->getPosition());

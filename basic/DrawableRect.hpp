@@ -4,9 +4,9 @@
 #include "IDrawable.hpp"
 #include "IObject.hpp"
 
-class BasicDrawable : public IDrawable {
+class DrawableRect : public IDrawable {
 public:
-    BasicDrawable();
+    DrawableRect(int width, int height);
 
     virtual void draw(IObject *model, sf::RenderTarget *drawer);
 

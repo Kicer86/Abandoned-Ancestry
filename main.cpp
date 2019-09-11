@@ -1,14 +1,14 @@
 #include <SFML/Graphics.hpp>
-#include "basic/BasicDrawable.hpp"
+#include "basic/DrawableRect.hpp"
 #include "basic/BasicObject.hpp"
 
 int main() {
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Abondoned Ancestry");
-    BasicObject shakinStevens(20, 20, 100, 50);
-    BasicObject shakinStevens2(200, 200, 100, 50);
-    BasicObject shakinStevens3(200, 200, 100, 50);
-    BasicDrawable instance;
+    BasicObject shakinStevens(20, 20);
+    BasicObject shakinStevens2(200, 200);
+    BasicObject shakinStevens3(200, 200);
+    DrawableRect instance(100, 20);
 
     while (window.isOpen())
     {
