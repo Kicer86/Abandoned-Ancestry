@@ -6,11 +6,7 @@
 
 class BasicDrawable : public IDrawable {
 public:
-    BasicDrawable(IObject* model);
-
-    virtual void draw(sf::RenderTarget *drawer);
-private:
-    IObject* _model;
+    virtual void draw(IObject *model, sf::RenderTarget *drawer);
 };
 
 #endif // BASICDRAWABLE_HPP

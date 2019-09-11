@@ -6,7 +6,7 @@ int main() {
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Abondoned Ancestry");
     BasicObject object(20, 20, 100, 50);
-    BasicDrawable instance(&object);
+    BasicDrawable instance;
 
     while (window.isOpen())
     {
@@ -21,7 +21,7 @@ int main() {
 
         window.clear(sf::Color(210, 200, 222));
 
-        instance.draw(&window);
+        instance.draw(&object, &window);
 
         window.display();
     }
