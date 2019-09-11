@@ -6,7 +6,12 @@
 
 class BasicDrawable : public IDrawable {
 public:
+    BasicDrawable();
+
     virtual void draw(IObject *model, sf::RenderTarget *drawer);
+
+private:
+    sf::RectangleShape _rect;
 };
 
 #endif // BASICDRAWABLE_HPP
