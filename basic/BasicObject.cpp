@@ -21,3 +21,8 @@ void BasicObject::move(const sf::Vector2f& moveVector)
 {
     _position += moveVector;
 }
+
+void BasicObject::moveTo(const sf::Vector2f& position)
+{
+    _position = position;
+}
