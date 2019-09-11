@@ -2,7 +2,7 @@
 #include "DrawableRect.hpp"
 
 
-DrawableRect::DrawableRect(int width, int height):
+DrawableRect::DrawableRect(float width, float height):
     _rect({width, height})
 {
     _rect.setFillColor(sf::Color(0, 0, 0, 0));
