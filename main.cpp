@@ -1,12 +1,14 @@
 #include <SFML/Graphics.hpp>
-#include "basic/BasicDrawable.hpp"
+#include "basic/DrawableRect.hpp"
 #include "basic/BasicObject.hpp"
 
 int main() {
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Abondoned Ancestry");
-    BasicObject object(20, 20, 100, 50);
-    BasicDrawable instance(&object);
+    BasicObject shakinStevens(20, 20);
+    BasicObject shakinStevens2(200, 200);
+    BasicObject shakinStevens3(200, 200);
+    DrawableRect instance(100, 20);
 
     while (window.isOpen())
     {
@@ -21,7 +23,18 @@ int main() {
 
         window.clear(sf::Color(210, 200, 222));
 
-        instance.draw(&window);
+        instance.draw(&shakinStevens, &window);
+        instance.draw(&shakinStevens2, &window);
+        instance.draw(&shakinStevens3, &window);
+
+        shakinStevens.moveTo(sf::Vector2f(20 + (rand() % 10) - 5,
+                                   20 + (rand() % 10) - 5));
+
+        shakinStevens2.moveTo(sf::Vector2f(200 + (rand() % 20) - 10,
+                                           200 + (rand() % 20) - 10));
+
+        shakinStevens3.move(sf::Vector2f((rand() % 3) - 1,
+                                         (rand() % 3) - 1));
 
         window.display();
     }
