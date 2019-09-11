@@ -28,8 +28,8 @@ int main() {
         shakinStevens.moveTo(sf::Vector2f(20 + (rand() % 10) - 5,
                                    20 + (rand() % 10) - 5));
 
-        shakinStevens2.moveTo(sf::Vector2f(200 + (rand() % 10) - 5,
-                                           200 + (rand() % 10) - 5));
+        shakinStevens2.moveTo(sf::Vector2f(200 + (rand() % 20) - 10,
+                                           200 + (rand() % 20) - 10));
 
         window.display();
     }
