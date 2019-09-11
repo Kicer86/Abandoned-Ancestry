@@ -15,8 +15,7 @@ public:
     World();
 private:
     std::unique_ptr<WorldDrawer> _drawer;
-    std::map<uint, std::unique_ptr<IObject>> _objects;
-    std::vector<std::unique_ptr<IDrawable>> _drawableObjects;
+    std::unique_ptr<WorldController> _controller;
 };
 
 #endif //WORLD_HPP
