@@ -9,13 +9,14 @@
 #include "basic/IObject.hpp"
 #include "basic/IDrawable.hpp"
 #include "WorldDrawer.hpp"
+#include "WorldController.hpp"
 
 class World {
 public:
     World();
 private:
-    std::unique_ptr<WorldDrawer> _drawer;
-    std::unique_ptr<WorldController> _controller;
+    WorldDrawer _drawer;
+    WorldController _controller;
 };
 
 #endif //WORLD_HPP
