@@ -23,6 +23,9 @@ int main() {
 
         instance.draw(&object, &window);
 
+        object.moveTo(sf::Vector2f(20 + (rand() % 10) - 5,
+                                   20 + (rand() % 10) - 5));
+
         window.display();
     }
 
