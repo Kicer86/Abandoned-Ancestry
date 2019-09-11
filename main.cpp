@@ -5,7 +5,7 @@
 int main() {
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Abondoned Ancestry");
-    BasicObject object(20, 20, 100, 50);
+    BasicObject shakinStevens(20, 20, 100, 50);
     BasicDrawable instance;
 
     while (window.isOpen())
@@ -21,9 +21,9 @@ int main() {
 
         window.clear(sf::Color(210, 200, 222));
 
-        instance.draw(&object, &window);
+        instance.draw(&shakinStevens, &window);
 
-        object.moveTo(sf::Vector2f(20 + (rand() % 10) - 5,
+        shakinStevens.moveTo(sf::Vector2f(20 + (rand() % 10) - 5,
                                    20 + (rand() % 10) - 5));
 
         window.display();
