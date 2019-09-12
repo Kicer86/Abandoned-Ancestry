@@ -6,5 +6,16 @@ add_library(gtest_main STATIC ${CMAKE_SOURCE_DIR}/external/googletest/googletest
 add_library(gmock STATIC ${CMAKE_SOURCE_DIR}/external/googletest/googlemock/src/gmock-all.cc)
 add_library(gmock_main STATIC ${CMAKE_SOURCE_DIR}/external/googletest/googlemock/src/gmock_main.cc)
 
-target_include_directories(gtest PRIVATE ${CMAKE_SOURCE_DIR}/external/googletest/googletest)
-target_include_directories(gmock PRIVATE ${CMAKE_SOURCE_DIR}/external/googletest/googlemock)
+target_include_directories(gtest
+                            PUBLIC
+                                ${CMAKE_SOURCE_DIR}/external/googletest/googletest/include
+                            PRIVATE
+                                ${CMAKE_SOURCE_DIR}/external/googletest/googletest
+)
+
+target_include_directories(gmock
+                            PUBLIC
+                                ${CMAKE_SOURCE_DIR}/external/googletest/googlemock/include
+                            PRIVATE
+                                ${CMAKE_SOURCE_DIR}/external/googletest/googlemock
+)
