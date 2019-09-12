@@ -17,6 +17,7 @@ target_include_directories(gmock
                             PUBLIC
                                 ${CMAKE_SOURCE_DIR}/external/googletest/googlemock/include
                             PRIVATE
+                                ${CMAKE_SOURCE_DIR}/external/googletest/googletest/include
                                 ${CMAKE_SOURCE_DIR}/external/googletest/googlemock
 )
 
