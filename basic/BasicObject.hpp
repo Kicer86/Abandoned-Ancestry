@@ -8,8 +8,8 @@ class BasicObject : public IObject
 public:
     BasicObject(float x, float y);
 
-    virtual const sf::Vector2f& getPosition();
-    virtual void move(const sf::Vector2f& moveVector);
+    const sf::Vector2f& getPosition() override;
+    void move(const sf::Vector2f& moveVector) override;
     void moveTo(const sf::Vector2f & position) override;
 
 private:
