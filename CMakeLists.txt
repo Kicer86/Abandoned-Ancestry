@@ -11,6 +11,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/modules)
 
 find_package(SFML REQUIRED COMPONENTS window)
 
+# init external submodules
+add_subdirectory(external)
+
 add_executable(Abandoned-Ancestry main.cpp
                                   basic/DrawableRect.cpp
                                   basic/BasicObject.cpp)

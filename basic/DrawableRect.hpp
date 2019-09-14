@@ -8,7 +8,7 @@ class DrawableRect : public IDrawable {
 public:
     DrawableRect(float width, float height);
 
-    virtual void draw(IObject *model, sf::RenderTarget *drawer);
+    void draw(IObject *model, sf::RenderTarget *drawer) override;
 
 private:
     sf::RectangleShape _rect;
