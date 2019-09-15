@@ -16,7 +16,8 @@ add_subdirectory(external)
 
 add_executable(Abandoned-Ancestry main.cpp
                                   basic/DrawableRect.cpp
-                                  basic/BasicObject.cpp)
+                                  basic/BasicObject.cpp
+                                  world/WorldController.cpp)
 
 target_link_libraries(Abandoned-Ancestry
                         PRIVATE

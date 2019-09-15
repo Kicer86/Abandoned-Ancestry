@@ -1,23 +1,18 @@
 #include "WorldController.hpp"
+#include <utility>
 
-void WorldController::addKeyMessage(const sf::Keyboard::Key& key, uint objectID)
+void WorldController::addKeyMessage(sf::Keyboard::Key key, std::function<void()>& func)
 {
-    if(_keyMap.find(key) == _keyMap.end())
-    {
-        _keyMap[key] = objectID
-    }
+    _keyMap.emplace(key, func);
 }
 
 void WorldController::processEvent(const sf::Event& event) const
 {
     if(event.type == sf::Event::KeyPressed)
     {
-        try
-        {
-            _keyMap.at(event.key.code);
-        }
-        catch(const std::out_of_range& e)
-        {
+        auto result = _keyMap.equal_range(event.key.code);
+        for(auto iter = result.first; iter != result.second; iter++) {
+            iter->second();
         }
     }
 }
