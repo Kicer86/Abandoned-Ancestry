@@ -17,7 +17,11 @@ add_subdirectory(external)
 add_executable(Abandoned-Ancestry main.cpp
                                   basic/DrawableRect.cpp
                                   basic/BasicObject.cpp
-                                  world/WorldController.cpp)
+                                  world/WorldController.cpp
+                                  world/WorldDrawer.cpp
+                                  world/World.cpp)
+
+include_directories(${CMAKE_SOURCE_DIR}/basic)
 
 target_link_libraries(Abandoned-Ancestry
                         PRIVATE
