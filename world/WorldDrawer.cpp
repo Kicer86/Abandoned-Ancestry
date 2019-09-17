@@ -18,7 +18,7 @@ void WorldDrawer::drawElement(IObject *object, const std::string& resource)
     }
 }
 
-void WorldDrawer::addDrawable(IDrawable* drawable, const std::string& resourceName)
+void WorldDrawer::addDrawable(std::unique_ptr<IDrawable> drawable, const std::string& resourceName)
 {
     _drawables.emplace(resourceName, std::move(drawable));
 }

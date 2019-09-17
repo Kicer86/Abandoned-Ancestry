@@ -14,7 +14,7 @@ class WorldDrawer
 public:
     WorldDrawer(sf::RenderTarget* target);
 
-    void addDrawable(IDrawable* drawable, const std::string& resourceName);
+    void addDrawable(std::unique_ptr<IDrawable> drawable, const std::string& resourceName);
 private:
     void drawElement(IObject *object, const std::string& resource);
 

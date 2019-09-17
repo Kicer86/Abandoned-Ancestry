@@ -14,7 +14,7 @@
 class World {
 public:
     World(sf::RenderTarget* target);
-    uint addObject(IObject* object);
+    uint addObject(std::unique_ptr<IObject> object);
 private:
     WorldDrawer _drawer;
     WorldController _controller;

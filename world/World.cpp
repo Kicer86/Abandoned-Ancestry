@@ -6,7 +6,7 @@ _drawer(target)
 {
 }
 
-uint World::addObject(IObject* object)
+uint World::addObject(std::unique_ptr<IObject> object)
 {
     _objects.emplace(_objectCounter++, std::move(object));
     return _objectCounter - 1;
