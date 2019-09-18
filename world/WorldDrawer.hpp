@@ -18,7 +18,7 @@ public:
 private:
     void drawElement(IObject *object, const std::string& resource);
 
-    std::unique_ptr<sf::RenderTarget> _target;
+    sf::RenderTarget* _target;
 
     std::map<std::string, std::unique_ptr<IDrawable>> _drawables;
 };

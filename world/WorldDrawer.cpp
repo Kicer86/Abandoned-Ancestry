@@ -1,7 +1,7 @@
 #include "WorldDrawer.hpp"
 
 WorldDrawer::WorldDrawer(sf::RenderTarget* target):
-_target(std::move(target))
+_target(target)
 {
 
 }
@@ -10,7 +10,7 @@ void WorldDrawer::drawElement(IObject *object, const std::string& resource)
 {
     try
     {
-        _drawables.at(resource)->draw(object, _target.get());
+        _drawables.at(resource)->draw(object, _target);
     }
     catch(const std::out_of_range&)
     {
