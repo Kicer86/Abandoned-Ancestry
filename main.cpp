@@ -10,7 +10,7 @@ int main() {
     BasicObject rotatinStevens(300, 450, 0);
     BasicObject shakinStevens2(200, 200, 50);
     DrawableRect instance(100, 20);
-    World world(&window);
+    World world();
 
     while (window.isOpen())
     {

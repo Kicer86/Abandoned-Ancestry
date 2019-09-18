@@ -1,8 +1,6 @@
 #include "World.hpp"
 
-World::World(sf::RenderTarget* target):
-_objectCounter(0),
-_drawer(target)
+World::World()
 {
 }
 
