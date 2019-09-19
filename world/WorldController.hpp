@@ -11,7 +11,7 @@ class WorldController
 private:
     std::multimap<sf::Keyboard::Key, std::function<void()> > _keyMap;
 public:
-    void addKeyMessage(sf::Keyboard::Key key, std::function<void()>& func);
+    void addKeyMessage(sf::Keyboard::Key key, const std::function<void()>& func);
 
     void processEvent(const sf::Event& event) const;
 };

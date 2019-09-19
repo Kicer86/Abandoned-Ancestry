@@ -1,7 +1,7 @@
 #include "WorldController.hpp"
 #include <utility>
 
-void WorldController::addKeyMessage(sf::Keyboard::Key key, std::function<void()>& func)
+void WorldController::addKeyMessage(sf::Keyboard::Key key, const std::function<void()>& func)
 {
     _keyMap.emplace(key, func);
 }

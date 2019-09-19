@@ -1,9 +1,6 @@
 #ifndef WORLD_HPP
 #define WORLD_HPP
 #include <memory>
-#include <list>
-#include <vector>
-#include <string>
 #include <map>
 
 #include "IObject.hpp"
