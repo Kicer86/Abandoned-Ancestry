@@ -15,6 +15,7 @@ void DrawableRect::draw(IObject *model, sf::RenderTarget *drawer)
 {
     sf::Transform t;
     t.translate(model->getPosition());
+    t.rotate(model->getRotationDegrees());
 
     sf::RenderStates states;
     states.transform = t;

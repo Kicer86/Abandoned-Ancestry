@@ -1,14 +1,16 @@
 #include <SFML/Graphics.hpp>
 #include "basic/DrawableRect.hpp"
 #include "basic/BasicObject.hpp"
+#include "world/World.hpp"
 
 int main() {
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Abondoned Ancestry");
-    BasicObject shakinStevens(20, 20);
-    BasicObject shakinStevens2(200, 200);
-    BasicObject shakinStevens3(200, 200);
+    BasicObject shakinStevens(200, 200, 120);
+    BasicObject rotatinStevens(300, 450, 0);
+    BasicObject shakinStevens2(200, 200, 50);
     DrawableRect instance(100, 20);
+    World world();
 
     while (window.isOpen())
     {
@@ -24,16 +26,16 @@ int main() {
         window.clear(sf::Color(210, 200, 222));
 
         instance.draw(&shakinStevens, &window);
+        instance.draw(&rotatinStevens, &window);
         instance.draw(&shakinStevens2, &window);
-        instance.draw(&shakinStevens3, &window);
 
-        shakinStevens.moveTo(sf::Vector2f(20 + (rand() % 10) - 5,
-                                   20 + (rand() % 10) - 5));
+        shakinStevens.moveTo(sf::Vector2f(200 + (rand() % 10) - 5,
+                                   200 + (rand() % 10) - 5));
 
-        shakinStevens2.moveTo(sf::Vector2f(200 + (rand() % 20) - 10,
-                                           200 + (rand() % 20) - 10));
 
-        shakinStevens3.move(sf::Vector2f((rand() % 3) - 1,
+        rotatinStevens.rotate(0.005f);
+
+        shakinStevens2.move(sf::Vector2f((rand() % 3) - 1,
                                          (rand() % 3) - 1));
 
         window.display();
