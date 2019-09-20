@@ -7,10 +7,9 @@ int main() {
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Abondoned Ancestry");
     BasicObject shakinStevens(200, 200, 120);
-    BasicObject rotatinStevens(300, 450, 0);
+    BasicObject rotatinStevens(300, 450);
     BasicObject shakinStevens2(200, 200, 50);
     DrawableRect instance(100, 20);
-    World world;
 
     while (window.isOpen())
     {
