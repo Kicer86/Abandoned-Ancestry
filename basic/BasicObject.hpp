@@ -6,7 +6,7 @@
 class BasicObject : public IObject
 {
 public:
-    BasicObject(float x, float y, float rotationDegrees);
+    BasicObject(float x, float y, float rotationDegrees = 0);
 
     const sf::Vector2f& getPosition() override;
     const float getRotationDegrees() override;
