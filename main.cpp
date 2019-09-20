@@ -10,15 +10,13 @@ int main() {
     BasicObject rotatinStevens(300, 450, 0);
     BasicObject shakinStevens2(200, 200, 50);
     DrawableRect instance(100, 20);
-    World world();
+    World world;
 
     while (window.isOpen())
     {
-
         sf::Event event;
         while (window.pollEvent(event))
         {
-
             if (event.type == sf::Event::Closed)
                 window.close();
         }
