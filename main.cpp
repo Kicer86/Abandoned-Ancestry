@@ -1,15 +1,19 @@
 #include <SFML/Graphics.hpp>
 #include "basic/DrawableRect.hpp"
 #include "basic/BasicObject.hpp"
-#include "world/World.hpp"
+#include "world/GameManager.hpp"
+
+#include <memory>
 
 int main() {
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Abondoned Ancestry");
-    BasicObject shakinStevens(200, 200, 120);
-    BasicObject rotatinStevens(300, 450);
-    BasicObject shakinStevens2(200, 200, 50);
-    DrawableRect instance(100, 20);
+
+    GameManager manager(&window);
+    manager.addDrawable(std::make_unique<DrawableRect>(100, 20), "block");
+    manager.addObject(std::make_unique<BasicObject>(231, 100, 120), "block");
+    manager.addObject(std::make_unique<BasicObject>(300, 450), "block");
+    manager.addObject(std::make_unique<BasicObject>(200, 200, 50), "block");
 
     while (window.isOpen())
     {
@@ -22,18 +26,7 @@ int main() {
 
         window.clear(sf::Color(210, 200, 222));
 
-        instance.draw(&shakinStevens, &window);
-        instance.draw(&rotatinStevens, &window);
-        instance.draw(&shakinStevens2, &window);
-
-        shakinStevens.moveTo(sf::Vector2f(200 + (rand() % 10) - 5,
-                                   200 + (rand() % 10) - 5));
-
-
-        rotatinStevens.rotate(0.005f);
-
-        shakinStevens2.move(sf::Vector2f((rand() % 3) - 1,
-                                         (rand() % 3) - 1));
+        manager.frameDraw();
 
         window.display();
     }

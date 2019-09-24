@@ -15,9 +15,8 @@ public:
     WorldDrawer(sf::RenderTarget* target);
 
     void addDrawable(std::unique_ptr<IDrawable> drawable, const std::string& resourceName);
+    void drawElement(const IObject *object, const std::string& resource);
 private:
-    void drawElement(IObject *object, const std::string& resource);
-
     sf::RenderTarget* _target;
 
     std::map<std::string, std::unique_ptr<IDrawable>> _drawables;

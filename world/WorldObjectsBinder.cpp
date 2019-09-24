@@ -5,7 +5,7 @@ void WorldObjectsBinder::addObjectBinding(uint id, const std::string& resource)
     _binding.emplace(id, resource);
 }
 
-std::map<uint, std::string>::const_iterator WorldObjectsBinder::getObjectIterator() const
+const std::map<uint, std::string>& WorldObjectsBinder::getObjectMap() const
 {
-    return _binding.begin();
+    return _binding;
 }

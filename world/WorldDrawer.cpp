@@ -6,7 +6,7 @@ _target(target)
 
 }
 
-void WorldDrawer::drawElement(IObject *object, const std::string& resource)
+void WorldDrawer::drawElement(const IObject *object, const std::string& resource)
 {
     try
     {

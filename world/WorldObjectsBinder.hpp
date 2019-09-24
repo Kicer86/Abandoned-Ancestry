@@ -11,7 +11,7 @@ private:
     std::map<uint, std::string> _binding;
 public:
     void addObjectBinding(uint id, const std::string& resource);
-    std::map<uint, std::string>::const_iterator getObjectIterator() const;
+    const std::map<uint, std::string>& getObjectMap() const;
 };
 
 #endif //WORLDOBJECTSBINDER_HPP

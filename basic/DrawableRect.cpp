@@ -11,7 +11,7 @@ DrawableRect::DrawableRect(float width, float height):
 }
 
 
-void DrawableRect::draw(IObject *model, sf::RenderTarget *drawer)
+void DrawableRect::draw(const IObject *model, sf::RenderTarget *drawer)
 {
     sf::Transform t;
     t.translate(model->getPosition());

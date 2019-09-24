@@ -13,10 +13,15 @@ private:
     WorldController _controller;
     WorldDrawer _drawer;
     WorldObjectsBinder _binder;
+    
+    bool _exit;
 
 public:
     GameManager(sf::RenderTarget* target);
-    ~GameManager();
+
+    void addDrawable(std::unique_ptr<IDrawable> drawable, const std::string& resourceName);
+    void addObject(std::unique_ptr<IObject> object, const std::string& resourceForObject);
+    void frameDraw();
 };
 
 #endif

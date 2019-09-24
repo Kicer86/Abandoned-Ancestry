@@ -4,7 +4,7 @@
 #include "SFML/Graphics.hpp"
 class IDrawable {
 public:
-    virtual void draw(IObject *model, sf::RenderTarget *drawer) = 0;
+    virtual void draw(const IObject *model, sf::RenderTarget *drawer) = 0;
     virtual ~IDrawable() = default;
 };
 #endif //DRAWABLE_HPP
