@@ -13,7 +13,7 @@ void GameManager::frameDraw()
     {
         auto object = _world.getObject(objectBind.first);
         if(object != nullptr) {
-            _drawer.drawElement(object, objectBind.second);
+            _drawer.drawElement(*object, objectBind.second);
         }
     }
 }

@@ -11,11 +11,11 @@ DrawableRect::DrawableRect(float width, float height):
 }
 
 
-void DrawableRect::draw(const IObject *model, sf::RenderTarget *drawer)
+void DrawableRect::draw(const IObject& model, sf::RenderTarget *drawer)
 {
     sf::Transform t;
-    t.translate(model->getPosition());
-    t.rotate(model->getRotationDegrees());
+    t.translate(model.getPosition());
+    t.rotate(model.getRotationDegrees());
 
     sf::RenderStates states;
     states.transform = t;

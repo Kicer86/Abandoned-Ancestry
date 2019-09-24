@@ -13,8 +13,6 @@ private:
     WorldController _controller;
     WorldDrawer _drawer;
     WorldObjectsBinder _binder;
-    
-    bool _exit;
 
 public:
     GameManager(sf::RenderTarget* target);
