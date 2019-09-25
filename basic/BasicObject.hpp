@@ -8,8 +8,8 @@ class BasicObject : public IObject
 public:
     BasicObject(float x, float y, float rotationDegrees = 0);
 
-    const sf::Vector2f& getPosition() override;
-    const float getRotationDegrees() override;
+    const sf::Vector2f& getPosition() const override;
+    const float getRotationDegrees() const override;
 
     void move(const sf::Vector2f& moveVector) override;
     void moveTo(const sf::Vector2f & position) override;

@@ -19,7 +19,9 @@ add_executable(Abandoned-Ancestry main.cpp
                                   basic/BasicObject.cpp
                                   world/WorldController.cpp
                                   world/WorldDrawer.cpp
-                                  world/World.cpp)
+                                  world/World.cpp
+                                  world/WorldObjectsBinder.cpp
+                                  world/GameManager.cpp)
 
 include_directories(${CMAKE_SOURCE_DIR}/basic)
 

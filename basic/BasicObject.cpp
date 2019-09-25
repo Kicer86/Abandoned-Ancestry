@@ -7,12 +7,12 @@ _rotationDegrees(rotationDegrees)
 
 }
 
-const sf::Vector2f& BasicObject::getPosition()
+const sf::Vector2f& BasicObject::getPosition() const
 {
     return _position;
 }
 
-const float BasicObject::getRotationDegrees()
+const float BasicObject::getRotationDegrees() const
 {
     return _rotationDegrees;
 }
