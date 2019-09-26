@@ -15,6 +15,8 @@ int main() {
     manager.addObject(std::make_unique<BasicObject>(300, 450), "block");
     manager.addObject(std::make_unique<BasicObject>(200, 200, 50), "block");
 
+    window.setFramerateLimit(30);
+
     while (window.isOpen())
     {
         sf::Event event;
