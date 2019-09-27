@@ -5,7 +5,7 @@
 
 class ILogicable {
 public:
-    virtual void process(const IObject& model) = 0;
+    virtual void process(IObject& model) = 0;
     virtual ~ILogicable() = default;
 };
 

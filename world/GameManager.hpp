@@ -24,6 +24,7 @@ public:
     void addLogic(std::unique_ptr<ILogicable> logic, const std::string& resourceName);
     void addObject(std::unique_ptr<IObject> object, const std::string& resourceForObject = "", const std::string& logicForObject = "");
     void frameDraw();
+    void processLogic();
 };
 
 #endif

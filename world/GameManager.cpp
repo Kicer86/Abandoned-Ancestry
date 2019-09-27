@@ -18,6 +18,18 @@ void GameManager::frameDraw()
     }
 }
 
+void GameManager::processLogic()
+{
+    auto objects = _binder.getLogicalObjectMap();
+    for(const auto& objectBind : objects)
+    {
+        auto object = _world.getObject(objectBind.first);
+        if(object != nullptr) {
+            _simulation.processObject(*object, objectBind.second);
+        }
+    }
+}
+
 void GameManager::addDrawable(std::unique_ptr<IDrawable> drawable, const std::string& resourceName)
 {
     _drawer.addDrawable(std::move(drawable), resourceName);

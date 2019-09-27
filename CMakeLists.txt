@@ -17,6 +17,7 @@ add_subdirectory(external)
 add_executable(Abandoned-Ancestry main.cpp
                                   basic/DrawableRect.cpp
                                   basic/BasicObject.cpp
+                                  basic/UniversalLogic.cpp
                                   world/WorldController.cpp
                                   world/WorldDrawer.cpp
                                   world/World.cpp
