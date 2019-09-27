@@ -1,15 +1,15 @@
 #include "WorldSimulation.hpp"
 
-void WorldSimulation::addLogicable(std::unique_ptr<ILogicable> logicable, const std::string& resourceName)
+void WorldSimulation::addLogicable(std::unique_ptr<ILogic> logic, const std::string& resourceName)
 {
-    _logicables.emplace(resourceName, std::move(logicable));
+    _logics.emplace(resourceName, std::move(logic));
 }
 
 void WorldSimulation::processObject(IObject& object, const std::string& resource)
 {
     try
     {
-        _logicables.at(resource)->process(object);
+        _logics.at(resource)->process(object);
     }
     catch(const std::out_of_range&)
     {

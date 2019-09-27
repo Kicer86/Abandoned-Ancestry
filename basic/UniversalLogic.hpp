@@ -4,12 +4,12 @@
 #include <functional>
 
 #include "IObject.hpp"
-#include "ILogicable.hpp"
+#include "ILogic.hpp"
 
-class UniversalLogic : public ILogicable
+class UniversalLogic : public ILogic
 {
 public:
-    UniversalLogic(std::function<void(IObject&)>& function);
+    UniversalLogic(const std::function<void(IObject&)>& function);
     void process(IObject& model) override;
 private:
     std::function<void(IObject&)> _function;

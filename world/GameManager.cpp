@@ -35,7 +35,7 @@ void GameManager::addDrawable(std::unique_ptr<IDrawable> drawable, const std::st
     _drawer.addDrawable(std::move(drawable), resourceName);
 }
 
-void GameManager::addLogic(std::unique_ptr<ILogicable> logic, const std::string& resourceName)
+void GameManager::addLogic(std::unique_ptr<ILogic> logic, const std::string& resourceName)
 {
     _simulation.addLogicable(std::move(logic), resourceName);
 }

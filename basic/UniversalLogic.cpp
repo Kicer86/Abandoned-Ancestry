@@ -1,6 +1,6 @@
 #include "UniversalLogic.hpp"
 
-UniversalLogic::UniversalLogic(std::function<void(IObject&)>& function):
+UniversalLogic::UniversalLogic(const std::function<void(IObject&)>& function):
 _function(function)
 {
 }
