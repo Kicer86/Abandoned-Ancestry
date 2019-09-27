@@ -8,10 +8,12 @@
 class WorldObjectsBinder
 {
 private:
-    std::map<uint, std::string> _binding;
+    std::map<uint, std::string> _graphicsBinding;
+    std::map<uint, std::string> _logicBinding;
 public:
-    void addObjectBinding(uint id, const std::string& resource);
-    const std::map<uint, std::string>& getObjectMap() const;
+    void addObjectBinding(uint id, const std::string& graphicsResource = "", const std::string& logicResource = "");
+    const std::map<uint, std::string>& getGraphicalObjectMap() const;
+    const std::map<uint, std::string>& getLogicalObjectMap() const;
 };
 
 #endif //WORLDOBJECTSBINDER_HPP

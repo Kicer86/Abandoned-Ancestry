@@ -12,7 +12,7 @@ class World {
 public:
     World();
     uint addObject(std::unique_ptr<IObject> object);
-    const IObject* getObject(uint id);
+    IObject* getObject(uint id);
 private:
 
     uint _objectCounter;

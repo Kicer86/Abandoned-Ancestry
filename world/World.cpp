@@ -10,7 +10,7 @@ uint World::addObject(std::unique_ptr<IObject> object)
     return _objectCounter - 1;
 }
 
-const IObject* World::getObject(uint id)
+IObject* World::getObject(uint id)
 {
     try
     {
